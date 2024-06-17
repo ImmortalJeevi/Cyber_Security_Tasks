@@ -1,0 +1,140 @@
+1. crypto{ASCII_pr1nt4bl3}
+2. network
+Response from server:
+Welcome to netcat's flag shop!
+What would you like to buy?
+I only speak JSON, I hope that's ok.
+
+{"flag": "crypto{sh0pp1ng_f0r_fl4g5}"}
+code:
+	from pwn import *
+	import json
+
+	conn = remote('socket.cryptohack.org', 11112)
+
+	try:
+   
+    		data = {
+        	"buy": "flag"
+    }
+    json_data = json.dumps(data)
+
+   
+    conn.sendline(json_data)
+
+    
+    response = conn.recvall().decode('utf-8')
+
+   
+    print("Response from server:")
+    print(response)
+
+except Exception as e:
+    print("Exception occurred:", str(e))
+
+finally:
+   
+    conn.close()
+
+3. ASCII
+Code :
+ascii_integers = [99, 114, 121, 112, 116, 111, 123, 65, 83, 67, 73, 73, 95, 112, 114, 49, 110, 116, 52, 98, 108, 51, 125]
+
+flag = ''.join(chr(num) for num in ascii_integers)
+
+print( flag)
+
+crypto{ASCII_pr1nt4bl3}
+
+4. hex
+code: 
+hex_string = "63727970746f7b596f755f77696c6c5f62655f776f726b696e675f776974685f6865785f737472696e67735f615f6c6f747d"
+
+flag_bytes = bytes.fromhex(hex_string)
+
+flag = flag_bytes.decode('utf-8')
+
+print( flag)
+
+ crypt{You_will_be_working_with_hex_strings_a_lot}
+
+5. bytes to big integers
+
+code: 
+from Crypto.Util.number import long_to_bytes
+
+large_integer = 11515195063862318899931685488813747395775516287289682636499965282714637259206269
+
+message_bytes = long_to_bytes(large_integer)
+
+message = message_bytes.decode('utf-8')
+print(message)
+
+crypto{3nc0d1ng_byt3s_2_m3554935}
+6. xor
+code:
+label = "label"
+xor_key = 13
+def xor_string(s, key):
+    result = []
+    for char in s:
+        xored_char = ord(char) ^ key
+        result.append(chr(xored_char))
+    return ''.join(result)
+
+new_string = xor_string(label, xor_key)
+
+flag = f"crypto{{{new_string}}}"
+
+print(flag)
+
+crypto{wnohy}
+
+7. favorite bye:
+
+input_str = bytes.fromhex('73626960647f6b206821204f21254f7d694f7624662065622127234f726927756d')
+
+key = input_str[0] ^ ord('c')
+print(''.join(chr(c ^ key) for c in input_str)
+
+crypto{0x10_15_my_f4v0ur173_by7e}
+
+8. XOR
+KEY1_hex = "a6c8b6733c9b22de7bc0253266a3867df55acde8635e19c73313"
+KEY2_KEY1_hex = "37dcb292030faa90d07eec17e3b1c6d8daf94c35d4c9191a5e1e"
+KEY2_KEY3_hex = "c1545756687e7573db23aa1c3452a098b71a7fbf0fddddde5fc1"
+FLAG_KEY1_KEY3_KEY2_hex = "04ee9855208a2cd59091d04767ae47963170d1660df7f56f5faf"
+
+KEY1 = bytes.fromhex(KEY1_hex)
+KEY2_KEY1 = bytes.fromhex(KEY2_KEY1_hex)
+KEY2_KEY3 = bytes.fromhex(KEY2_KEY3_hex)
+FLAG_KEY1_KEY3_KEY2 = bytes.fromhex(FLAG_KEY1_KEY3_KEY2_hex)
+
+KEY2 = bytes(a ^ b for a, b in zip(KEY1, KEY2_KEY1))
+KEY3 = bytes(a ^ b for a, b in zip(KEY2, KEY2_KEY3))
+
+FLAG = bytes(a ^ b ^ c ^ d for a, b, c, d in zip(FLAG_KEY1_KEY3_KEY2, KEY1, KEY3, KEY2))
+
+flag_str = FLAG.decode('utf-8')
+
+print("crypto{" + flag_str + "}")
+
+crypto{1f3a078325e42d1ef2f4}
+
+9. you either know xor or you don't
+enc_hex = "0e0b213f26041e480b26217f27342e175d0e070a3c5b103e2526217f27342e175d0e077e263451150104"
+
+enc_bytes = bytes.fromhex(enc_hex)
+
+flag_format = "crypto{"
+
+for key in range(256):  # Try all possible single-byte keys (0x00 to 0xFF)
+    decrypted = bytes(c ^ key for c in enc_bytes)
+    if decrypted.startswith(flag_format.encode('utf-8')) and decrypted.endswith(b'}'):
+        flag = decrypted.decode('utf-8')
+        print(flag)
+        break
+crypto{1f_y0u_XoR_w1th_7h3_k3y}
+
+incorrect flag
+I tried my level best to complete the tasks given. 

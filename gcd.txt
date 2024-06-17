@@ -1,0 +1,46 @@
+package CLUB;
+
+import java.util.Scanner;
+
+public class gcd {
+	static class Result {
+		int gcd;
+		int x;
+		int y;
+
+		public Result(int gcd, int x, int y) {
+			this.gcd = gcd;
+			this.x = x;
+			this.y = y;
+		}
+	}
+
+	public static Result extendedGCD(int a, int b) {
+		if (a == 0) {
+			return new Result(b, 0, 1);
+		}
+
+		Result prevResult = extendedGCD(b % a, a);
+		int x = prevResult.y - (b / a) * prevResult.x;
+		int y = prevResult.x;
+
+		return new Result(prevResult.gcd, x, y);
+	}
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Enter the first number (a): ");
+		int a = scanner.nextInt();
+
+		System.out.print("Enter the second number (b): ");
+		int b = scanner.nextInt();
+
+		Result result = extendedGCD(a, b);
+		System.out.println("GCD(" + a + ", " + b + ") = " + result.gcd);
+		System.out.println("x = " + result.x + ", y = " + result.y);
+		System.out.println("Equation: " + a + " * " + result.x + " + " + b + " * " + result.y + " = " + result.gcd);
+
+		scanner.close();
+	}
+}
