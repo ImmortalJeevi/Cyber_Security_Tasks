@@ -1,0 +1,9 @@
+echo - prints any text that we type after 'echo'
+whoami - to find out which user is currently logged in
+ls - lists all files
+cd - change directory
+cat - reads the file and prints the text inside it
+pwd - prints current working directory
+find - as the name suggests it finds the file(if we know only the filename)
+grep - to search entire contents in the file
+>> - append the output
