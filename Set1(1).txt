@@ -1,1 +1,124 @@
-Reversing - Reverse engineering is the process of analysing and understanding a system, a process etc. It is not solely restricted to software: you can reverse engineering watches, televisions, cars, bikes, camera etc., The primary application area is in malware analysis where analysts take apart a malware(virus, worm, trojans, bots etc) to understand how it works and develop defences against them. it is g is also used in other areas such as finding vulnerabilities, performance and binary analysis and more. Reverse engineering is a difficult and time consuming task. It requires paying great attention to detail and connecting various concepts together to make inferences about program behavior. There is no standard methodology or technique to reverse engineering software. Reverse engineering hardware has also gained a lot of attention but it requires significantly advanced knowledge and several specialized tools. 
+Reversing - Reverse engineering is the process of analysing and understanding a system, a process etc. It is not solely restricted to software: you can reverse engineering watches, televisions, cars, bikes, camera etc., The primary application area is in malware analysis where analysts take apart a malware(virus, worm, trojans, bots etc) to understand how it works and develop defences against them. it is g is also used in other areas such as finding vulnerabilities, performance and binary analysis and more. Reverse engineering is a difficult and time consuming task. It requires paying great attention to detail and connecting various concepts together to make inferences about program behavior. There is no standard methodology or technique to reverse engineering software. Reverse engineering hardware has also gained a lot of attention but it requires significantly advanced knowledge and several specialized tools. We use c, x86 assembly programming
+
+
+Binary Exploitation - Binary exploitation involves manipulating binary executables to achieve unintended behavior, such as gaining unauthorized access or control over a system. The primary goal of binary exploitation is to discover and leverage vulnerabilities in software binaries to compromise systems, extract sensitive information, or execute arbitrary code.
+Binary Executables: Compiled machine code that computers can directly execute.
+Types: Executable files (.exe on Windows, ELF on Linux), shared libraries (.dll, .so), firmware images, etc.
+
+Memory Layout:
+
+Stack: Used for local variables, function parameters, return addresses.
+Heap: Dynamic memory allocation (e.g., malloc in C).
+Registers: CPU registers used for fast access to data.
+
+Vulnerabilities:
+Buffer Overflows: Writing beyond allocated memory boundaries.
+Format String Vulnerabilities: Exploiting improper handling of format specifiers in input/output functions.
+Integer Overflows: Manipulating arithmetic operations to cause unexpected behavior.
+Techniques and Tools
+Reverse Engineering:
+
+Static Analysis: Examining binary without executing it.
+Dynamic Analysis: Running binary in a controlled environment to observe behavior.
+Exploit Development:
+
+Payload Crafting: Creating malicious input to exploit vulnerabilities (e.g., shellcode for remote code execution).
+ROP (Return-Oriented Programming): Utilizing existing code sequences (gadgets) to chain together an exploit without injecting new code.
+Tools:
+
+Debuggers: GDB, WinDbg, IDA Pro.
+Exploit Frameworks: Metasploit, pwntools, Immunity Debugger.
+Binary Analysis Tools: Binary Ninja, Ghidra, radare2
+
+Cryptography : Cryptography is the practice and study of techniques for secure communication in the presence of third parties (adversaries).The primary goal of cryptography is to ensure confidentiality, integrity, and authenticity of data and communication. This is achieved through various cryptographic algorithms and protocols.
+
+Types of Cryptography
+Symmetric Cryptography:
+
+Definition: Uses a single key for both encryption and decryption.
+Examples: DES (Data Encryption Standard), AES (Advanced Encryption Standard), and symmetric key algorithms in general.
+Use Cases: Fast and efficient for bulk encryption of data, such as in file encryption and VPN tunnels.
+Asymmetric Cryptography (Public Key Cryptography):
+
+Definition: Uses a pair of keys (public and private) for encryption and decryption.
+Examples: RSA (Rivest-Shamir-Adleman), Diffie-Hellman key exchange, ECC (Elliptic Curve Cryptography).
+Use Cases: Key exchange, digital signatures, secure communication over insecure channels.
+Cryptographic Hash Functions
+Definition: Hash functions map data of arbitrary size to a fixed-size output (hash value) in a way that is deterministic and fast.
+Properties: Collision resistance, preimage resistance, and second preimage resistance.
+Use Cases: Password hashing, integrity verification, digital signatures.
+Cryptographic Protocols and Standards
+SSL/TLS: Secure protocols for secure communication over the Internet (HTTPS).
+IPsec: Protocol suite for secure IP communication.
+PGP/GPG: Standards for email encryption and digital signatures.
+
+Web exploitation refers to the process of identifying and leveraging vulnerabilities within web applications, websites, and web servers to compromise their security.
+
+Objectives: The main goals of web exploitation include gaining unauthorized access to sensitive information, executing remote commands on servers, manipulating user sessions, and exploiting trust relationships within web environments.
+
+Key Concepts and Common Vulnerabilities
+Web Application Architecture:
+
+Client-side Technologies: HTML, CSS, JavaScript.
+Server-side Technologies: PHP, Python, Ruby, Java, etc.
+Backend Databases: MySQL, MongoDB, PostgreSQL, etc.
+Common Vulnerabilities:
+
+Injection Attacks: SQL Injection (SQLi), Command Injection, LDAP Injection.
+Broken Authentication: Weak passwords, session management flaws.
+Cross-Site Scripting (XSS): Reflected XSS, Stored XSS, DOM-based XSS.
+Cross-Site Request Forgery (CSRF): Exploiting user trust to perform actions on their behalf.
+Security Misconfigurations: Exposed sensitive information, default credentials, unnecessary services.
+Techniques and Tools
+Manual Testing:
+
+Black Box Testing: Analyzing and testing web applications without prior knowledge of their internal structure.
+White Box Testing: Leveraging knowledge of the application's architecture and source code to identify vulnerabilities.
+Automated Tools:
+
+Vulnerability Scanners: Burp Suite, OWASP ZAP, Acunetix.
+Exploitation Frameworks: Metasploit, BeEF (Browser Exploitation Framework).
+Exploit Development:
+
+Crafting and deploying payloads to exploit identified vulnerabilities (e.g., SQL Injection to extract sensitive data).
+Common Attack Scenarios
+SQL Injection (SQLi):
+
+Exploiting SQL vulnerabilities to extract or manipulate database information.
+Cross-Site Scripting (XSS):
+
+Injecting malicious scripts into web pages to execute unauthorized actions on users' browsers.
+Command Injection:
+
+Running arbitrary commands on servers by manipulating input fields that interact with the underlying operating system.
+
+Digital forensics is the application of scientific techniques and methodologies to identify, collect, preserve, and analyze digital evidence from electronic devices and networks.
+
+Objectives: The primary goal of digital forensics is to uncover evidence related to cybercrimes, security breaches, fraud, intellectual property theft, and other illicit activities involving digital data.
+
+Key Concepts and Types of Forensics
+Types of Digital Forensics:
+
+Computer Forensics: Analyzing data from computers and storage devices.
+Network Forensics: Monitoring and analyzing network traffic and logs.
+Mobile Device Forensics: Extracting and analyzing data from smartphones, tablets, etc.
+Memory Forensics: Analyzing volatile memory (RAM) for evidence of running processes and activities.
+Legal Considerations:
+
+Chain of Custody: Ensuring the integrity and admissibility of evidence.
+Privacy and Data Protection Laws: Compliance with laws regarding data handling and privacy.
+Techniques and Tools
+Evidence Acquisition:
+
+Imaging: Creating forensic copies (bit-for-bit images) of storage devices to preserve evidence without altering the original data.
+Live Analysis: Analyzing data from a live system without modifying its state.
+Data Analysis:
+
+File System Analysis: Recovering deleted files, analyzing file metadata, and examining file contents.
+Keyword Search: Searching for specific terms or patterns within digital evidence.
+Timeline Analysis: Reconstructing timelines of events based on system logs and timestamps.
+Tools:
+
+EnCase Forensic: Comprehensive tool for digital investigation and analysis.
+Autopsy: Open-source digital forensics platform for analyzing disk images and filesystems.
+Volatility: Framework for memory forensics and analysis.
