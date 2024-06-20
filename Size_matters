@@ -9,6 +9,6 @@ m_possible = sympy.root(ct, e)
 if m_possible.is_integer:
     m = int(m_possible)
     plaintext_bytes = m.to_bytes((m.bit_length() + 7) // 8, byteorder='big')
-    print("Plaintext (bytes):", plaintext_bytes)
+    print(plaintext_bytes)
 else:
     print("Cube root attack not successful.")
