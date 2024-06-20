@@ -1,1 +1,14 @@
 recr{flaggie}
+
+code:
+import sympy
+ct = 61157966734103371341490589584047901809639618225721810380698297516885678285575048794229133964145600739348505413290761644259197214583972877327534376915178125
+e = 5
+m_possible = sympy.root(ct, e)
+
+if m_possible.is_integer:
+    m = int(m_possible)
+    plaintext_bytes = m.to_bytes((m.bit_length() + 7) // 8, byteorder='big')
+    print("Plaintext (bytes):", plaintext_bytes)
+else:
+    print("Cube root attack not successful.")
